@@ -1,0 +1,17 @@
+new-game.html에서 POST 요청을 전달하는 것을 확인
+
+서버에서 id 값을 제대로 전달하지 못하는 것 같다.
+
+id가 undefined로 계속 game.js의 init메소드를 실행중
+
+services/index.js의 makeGame 변수를 직접 설정해보았지만 변화 X
+
+기본적인 서버 설정 문제거나
+
+미들웨어가 정상적으로 작동하지 않는 듯 하다.
+
+도와줄 사람이 없다.
+
+일단은 넘어가자.
+다음에 해결해보자.
+Express.
