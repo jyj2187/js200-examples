@@ -1,0 +1,4 @@
+.push -> .pop => 스택
+.push -> .shift => FIFO = 큐queue
+
+.splice(시작 인덱스, 삭제할 요소들의 개수, 추가할 요소들...)

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Simple Text Editor</title>
+</head>
+<body>
+    <div class="toolbar">
+        <a href="" data-command="h1">대</a>
+        <a href="" data-command="h2">중</a>
+        <a href="" data-command="h3">소</a>
+        <a href="" data-command="p" style="margin-right: 8px;">P</a>
+        <a href="" data-command="bold">
+            <i class="fa fa-bold"></i>
+        </a>
+        <a href="" data-command="italic">
+            <i class="fa fa-italic"></i>
+        </a>
+        <a href="" data-command="underline">
+            <i class="fa fa-underline"></i>
+        </a>
+        <a href="" data-command="strikeThrough" style="margin-right: 8px;">
+            <i class="fa fa-strikethrough"></i>
+        </a>
+        <a href="" data-command="justifyLeft">
+            <i class="fa fa-align-left"></i>
+        </a>
+        <a href="" data-command="justifyCenter">
+            <i class="fa fa-align-center"></i>
+        </a>
+        <a href="" data-command="justifyRight">
+            <i class="fa fa-align-right"></i>
+        </a>
+        <a href="" data-command="justifyFull" style="margin-right: 8px;">
+            <i class="fa fa-align-justify"></i>
+        </a>
+    </div>
+    <div class="editor" contenteditable="true">
+        <h1>Simple Editor</h1>
+        <p>간단한 에디터</p>
+    </div>
+    <script>
+        document.querySelectorAll('.toolbar a')
+        .forEach(aEl => aEl.addEventListener('click', function (e) {
+            e.preventDefault();
+            const command = aEl.dataset.command;
+
+            //execCommand(명령이름, 사용자 ui를 보여주는 여부, 특정 명령에 필요한 값)
+            //contenteditable 속성이 적용된 현재 활성화된 요소에 명령을 전달
+            //formatBlock 명령은 현재 선택된 문장을 감싸고 있는 요소를
+            // 마지막 인자값으로 전달한 블록 레벨 태그명으로 변경합니다.
+            if (command == 'h1' || command == 'h2' || command == 'h3' || command == 'p'){
+                document.execCommand('formatBlock', false, command);
+            } else {
+                document.execCommand(command)
+            };
+        }));
+    </script>
+</body>
+</html>
