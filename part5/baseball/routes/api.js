@@ -43,7 +43,8 @@ async function makeGame(req, res, next) {
 }
 
 async function getGame(req, res, next) {
-    const id = req.param.id;
+    const id = req.params.id;
+    console.log(id);
 
     try {
         res.send(services.getGame(id));

@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
   res.send(err);
 });
 
-app.listen(3001);
+app.listen(3000);
 
 process.on('uncaughtException', (err) => {
   console.error('uncaughtException', err);

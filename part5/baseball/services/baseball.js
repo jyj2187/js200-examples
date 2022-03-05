@@ -50,7 +50,7 @@ class Baseball {
         answer.forEach((v, i) => {
             if (guess[i] === v) {
                 strike++;
-            } else if (answer.indexof(guess[i]) > -1) {
+            } else if (answer.indexOf(guess[i]) > -1) {
                 ball++;
             }
         });
